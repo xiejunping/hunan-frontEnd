@@ -41,7 +41,7 @@ function findIndex (id, feild, arr) {
 
 * `window` 浏览器相关工具方法
   * [x] 取得URL里的参数
-  * [ ]
+  * [ ] a
 
 * `valid` 验证类工具方法
   * [ ] 是否为请求地址
