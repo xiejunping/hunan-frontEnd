@@ -1,0 +1,27 @@
+{
+  "name": "hunan-frontend",
+  "version": "1.0.0",
+  "description": "`hunan-frontEnd` 是一个更符合前端实际需要而且更高效的Web开发人员的仓库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiejunping/hunan-frontEnd.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "nodejs",
+    "vue",
+    "react"
+  ],
+  "author": "Cobbler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiejunping/hunan-frontEnd/issues"
+  },
+  "homepage": "https://github.com/xiejunping/hunan-frontEnd#readme"
+}
