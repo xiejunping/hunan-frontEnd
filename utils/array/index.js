@@ -10,8 +10,8 @@ define(function (require) {
      * @returns {number} 位置
      */
     findIndex: function (id, feild, arr) {
-      let index = -1,
-        tem = [];
+      let index = -1;
+      let tem = [];
       if (id && feild && arr && arr.length) {
         arr.forEach(function (t, i) {
           tem.push(t[feild]);
@@ -20,7 +20,17 @@ define(function (require) {
       }
       return index;
     },
-
+    /**
+     * 数组随机乱序
+     * @param {Array} arr 要乱序的数组
+     * @returns {Array} arr 乱序的数组
+     */
+    randomArr: function(arr) {
+      if (typeof arr !== 'array') return null;
+      return arr.sort(function() {
+          return (0.5 - Math.random());
+      });
+    }
   };
 
   return utils;
