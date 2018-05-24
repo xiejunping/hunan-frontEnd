@@ -19,7 +19,8 @@ define(function (require) {
         index = tem.indexOf(id);
       }
       return index;
-    }
+    },
+    
   };
 
   return utils;
