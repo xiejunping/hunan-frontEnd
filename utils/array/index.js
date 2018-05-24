@@ -20,7 +20,7 @@ define(function (require) {
       }
       return index;
     },
-    
+
   };
 
   return utils;

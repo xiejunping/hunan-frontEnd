@@ -30,7 +30,7 @@ function findIndex (id, feild, arr) {
 
 
 ## 待添加
-* [*] 记录集中查找位置
+* [x] 记录集中查找位置
 * [ ] 数组随机乱序
 
 
