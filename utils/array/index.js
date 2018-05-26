@@ -1,6 +1,8 @@
 define(function (require) {
   'use strict';
-
+  function _checkType (v) {
+    return Object.prototype.toString.call(v).slice(8, -1)
+  }
   let utils = {
     /**
      * 记录集中查找位置
@@ -26,7 +28,7 @@ define(function (require) {
      * @returns {Array} arr 乱序的数组
      */
     randomArr: function(arr) {
-      if (typeof arr !== 'array') return null;
+      if (_checkType(arr) !== 'Array') return null;
       return arr.sort(function() {
           return (0.5 - Math.random());
       });
