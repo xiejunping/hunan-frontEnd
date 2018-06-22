@@ -1,9 +1,16 @@
 define(function (require) {
   'use strict';
-  function _checkType (v) {
-    return Object.prototype.toString.call(v).slice(8, -1)
-  }
+
   let utils = {
+    /**
+     * 是否是数组
+     * @param arr
+     * @returns {boolean}
+     */
+    isArray: function (arr) {
+      return Array.isArray(arr)
+      // return Object.prototype.toString.call(arr) === "[object Array]"
+    },
     /**
      * 记录集中查找位置
      * @param {String} id 查找值
@@ -28,7 +35,7 @@ define(function (require) {
      * @returns {Array} arr 乱序的数组
      */
     randomArr: function(arr) {
-      if (_checkType(arr) !== 'Array') return null;
+      if (Array.isArray(arr)) return null;
       return arr.sort(function() {
           return (0.5 - Math.random());
       });
