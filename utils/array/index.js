@@ -35,10 +35,26 @@ define(function (require) {
      * @returns {Array} arr 乱序的数组
      */
     randomArr: function(arr) {
-      if (Array.isArray(arr)) return null;
-      return arr.sort(function() {
-          return (0.5 - Math.random());
+      if (!Array.isArray(arr)) return null;
+      arr.sort(function() {
+        return (0.5 - Math.random());
       });
+      return arr;
+    },
+    /**
+     * 数组随机抽多个 - 非重复
+     * @param arr
+     * @param len
+     * @returns {*}
+     */
+    randomLen: function (arr, len) {
+      if (!Array.isArray(arr)) return null;
+      if (arr.length < len) return null;
+      const arrTmp = [];
+      for (let i = 0; i < len; i++) {
+        arr.push(utils.randomArr(arr).pop())
+      }
+      return arrTmp;
     }
   };
 
