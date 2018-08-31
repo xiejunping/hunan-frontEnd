@@ -60,3 +60,21 @@
 `git push origin :[branch name]`
 
 分支名前的冒号代表删除。
+
+### 笔试分享
+
+1、怎么数组去重
+```js
+es6
+// 去除数组的重复成员
+[...new Set(array)]
+```
+
+2、js的数据类型，及es6新增的数据类型 共7种
+
+3、伪数组转真数组
+
+4、AMD, CMD, CommonJS和UMD
+
+5、es6新增数据结构 
+
