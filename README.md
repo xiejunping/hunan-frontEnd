@@ -68,6 +68,12 @@
 es6
 // 去除数组的重复成员
 [...new Set(array)]
+
+function dedupe(array) {
+  return Array.from(new Set(array));
+}
+
+dedupe([1, 1, 2, 3]) // [1, 2, 3]
 ```
 
 2、js的数据类型，及es6新增的数据类型 共7种
