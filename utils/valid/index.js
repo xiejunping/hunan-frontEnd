@@ -36,6 +36,15 @@ define(function(require) {
     },
     isUrl: function(val) {
       return typeof val === 'string' && /(https?|ftp|file):\/\/[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]/.test(val)
+    },
+    isPrototype: function (data) {
+      return Object.prototype.toString.call(data).toLowerCase();
+    },
+    isJSON: function(data) {
+      return utils.isPrototype(data) === '[object object]';
+    },
+    isFunction: function(data) {
+      return utils.isPrototype(data) === '[object function]';
     }
   }
 });

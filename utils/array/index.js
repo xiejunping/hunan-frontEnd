@@ -8,8 +8,12 @@ define(function (require) {
      * @returns {boolean}
      */
     isArray: function (arr) {
+      if (!Array.isArray) {
+        Array.isArray = arg => {
+          return Object.prototype.toString.call(arr) === "[object Array]"
+        }
+      }
       return Array.isArray(arr)
-      // return Object.prototype.toString.call(arr) === "[object Array]"
     },
     /**
      * 记录集中查找位置
