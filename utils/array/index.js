@@ -59,6 +59,20 @@ define(function (require) {
         arr.push(utils.randomArr(arr).pop())
       }
       return arrTmp;
+    },
+    /**
+     * 数组合并去重
+     * @param {array} list
+     * @param {array} add
+     */
+    mergeArray: function (list, add) {
+      if (!isArray(add)) return list
+
+      add.forEach(ret => {
+        const index = list.findIndex(meta => meta.id === ret.id || meta.name === ret.name)
+        if (index < 0) list.push(ret)
+      })
+      return list
     }
   };
 

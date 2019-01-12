@@ -724,6 +724,48 @@ define(function(require) {
       if(val === '') return '-';
       val = (+val).toFixed(3) + '';
       return val.substring(0, val.length - 1);
+    },
+    /**
+     * 获取位置
+     * @param {dom} el
+     * @returns {{top: number, left: number, width: number, height: number}}
+     */
+    getRect: function (el) {
+      if (el instanceof window.SVGElement) {
+        let rect = el.getBoundingClientRect()
+        return {
+          top: rect.top,
+          left: rect.left,
+          width: rect.width,
+          height: rect.height
+        }
+      } else {
+        return {
+          top: el.offsetTop,
+          left: el.offsetLeft,
+          width: el.offsetWidth,
+          height: el.offsetHeight
+        }
+      }
+    },
+    /**
+     * 对象转formdata数据
+     * @param {object} obj
+     * @returns {formdata} form
+     */
+    objToFormData: function (obj) {
+      let form = new FormData()
+      for (const key in obj) {
+        if ({}.hasOwnProperty.call(obj, key)) {
+          // 数组处理
+          if (Object.prototype.toString.call(obj[key]) === '[object Array]') {
+            obj[key].forEach(ret => {
+              form.append(key, ret)
+            })
+          } else form.append(key, obj[key])
+        }
+      }
+      return form
     }
   };
 

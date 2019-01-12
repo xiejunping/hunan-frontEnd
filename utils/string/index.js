@@ -58,6 +58,24 @@ define(function(require) {
       }
       return arr.join('')
     },
+    /**
+     * 判断字符串长度 （可中文两个长度）
+     * @param {string} val
+     * @returns {number}
+     */
+    getByteLen: function (val) {
+      var len = 0
+      for (var i = 0; i < val.length; i++) {
+        var a = val.charAt(i)
+        /* eslint-disable-next-line */
+        if (a.match(/[^\x00-\xff]/ig) !== null) {
+          len += 2
+        } else {
+          len += 1
+        }
+      }
+      return len
+    }
   }
 
   return utils;

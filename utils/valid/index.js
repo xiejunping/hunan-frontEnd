@@ -26,7 +26,9 @@ define(function(require) {
       return Array.isArray(val)
     },
     isDate: function(val) {
-      return !isNaN(Number(val))
+      const DATEREGEXP = /\d{4}(-|\/|.)\d{1,2}\d{1,2}/
+      const STMPEXP = /([0-9]){13}/
+      return (val instanceof Date) || DATEREGEXP.test(val) || STMPEXP.test(val)
     },
     isEmail: function(val) {
       return typeof val === 'string' && /^[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)+$/i.test(val)
