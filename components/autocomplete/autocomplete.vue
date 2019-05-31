@@ -64,6 +64,7 @@ export default {
       this.$emit('on-select', item)
     },
     clearInput (cale) {
+      if (this.disabled) return
       let param = {id: '', name: ''}
       if (cale && this.query) {
         const patter = this.data.filter(ret => ret.name === this.query)
