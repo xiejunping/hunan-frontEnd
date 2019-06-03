@@ -1,41 +1,30 @@
 <template>
-  <Poptip class="c-profile" trigger="hover" placement="bottom-end">
+  <Poptip class="c-profile" placement="bottom-end">
     <Avatar style="margin-right: 8px" icon="ios-person" />
-    <Icon type="ios-arrow-down" size="18" />
-    <div slot="content">
-      <dl class="mene-log">
-        <dd>
-          <Icon type="md-home"/>
-          <span> 客户中心</span>
-        </dd>
-        <dd>
-          <Icon type="md-person"/>
-          <span> 账户信息</span>
-        </dd>
-        <dd>
-          <Icon type="md-settings"/>
-          <span> 修改密码</span>
-        </dd>
-        <dd>
-          <Icon type="md-medal"/>
-          <span> 积分中心</span>
-        </dd>
-        <dd @click="signOut">
-          <Icon type="md-log-out"/>
-          <span> 退出账户</span>
-        </dd>
-      </dl>
-    </div>
+    <template v-if="sign">
+      <Icon type="ios-arrow-down" size="18" />
+      <div slot="content">
+        <slot></slot>
+      </div>
+    </template>
+    <template v-else>
+      <a @click="$emit('on-login')" class="c-text"><span>登录</span></a>
+    </template>
   </Poptip>
 </template>
 <script>
 export default {
   name: 'perfile',
   props: {
-
+    sign: {
+      type: Boolean,
+      default () {
+        return false
+      }
+    }
   },
   methods: {
-    signOut () {}
+
   }
 }
 </script>
@@ -44,16 +33,8 @@ export default {
 
 .c-profile
   padding 0 8px
-.mene-log
-  width: 100%
-  text-align: left
-  dd
-    width: 100%
-    font-size: 14px
-    line-height: 35px
-    border-top: solid 1px #e8e8e8
-    &:first-child
-      border-top: none
+  .c-text
+    color #666
     &:hover
-      color: #2d8cf0
+      color #2d8cf0
 </style>

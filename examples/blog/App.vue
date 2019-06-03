@@ -1,27 +1,65 @@
 <template>
   <div id="app">
     <Layout>
-      <Header>
-
+      <Header class="c-page-header">
+        <TopMenu :data="menu" :current="currentModule" :sign="false"></TopMenu>
       </Header>
       <Layout>
+        <Sider class="c-page-sider" hide-trigger>
+          <SideMenu :data="a" :current="b"></SideMenu>
+        </Sider>
         <Content>
 
           <router-view />
         </Content>
-        <Sider hide-trigger>
-
-        </Sider>
       </Layout>
-      <Footer></Footer>
+      <Footer class="c-page-footer">
+        <foot></foot>
+      </Footer>
     </Layout>
   </div>
 </template>
 <script>
+import TopMenu from '@/base/layout/top-menu.vue'
+import SideMenu from '@/base/layout/side-menu.vue'
+import Foot from '@/base/layout/footer.vue'
 export default {
-  name: 'app'
+  name: 'app',
+  components: { TopMenu, SideMenu, Foot },
+  computed: {
+    currentModule () {
+      let current = ''
+      if (this.menu && this.menu.length) current = this.menu.filter(ret => ret.id === this.menuId).pop().name
+      return current
+    }
+  },
+  data () {
+    return {
+      menu: this.$store.state.menu,
+      menuId: 3,
+      a: [],
+      b: 0
+    }
+  },
+  mounted () {
+  }
 }
 </script>
 <style lang="stylus" scoped>
+@import "~assets/styles/mixin.styl"
 
+#app
+  height inherit
+  .c-page-header
+    padding 0
+    background-color transparent
+    margin-bottom $WrappSize
+  >>>.ivu-layout
+    $scroll()
+    height inherit
+  .c-page-sider
+    background-color $WrappBgColor
+  .c-page-footer
+    background-color $footerBgColor
+    margin-top $WrappSize
 </style>

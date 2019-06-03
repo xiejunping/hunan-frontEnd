@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import iView from 'iview'
 import App from './App.vue'
-// import router from './router'
+import router from './router'
 import store from '@/store'
 import 'babel-polyfill'
 import 'iview/dist/styles/iview.css'
@@ -12,6 +12,6 @@ Vue.use(iView)
 
 new Vue({
   render: h => h(App),
-  // router,
+  router,
   store
 }).$mount('#app')

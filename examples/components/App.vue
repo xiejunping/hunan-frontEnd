@@ -2,7 +2,7 @@
   <div id="app">
     <Layout>
       <Header class="c-page-header">
-        <TopMenu :data="a" :current="b"></TopMenu>
+        <TopMenu :data="menu" :current="currentModule" :sign="true"></TopMenu>
       </Header>
       <Layout>
         <Sider class="c-page-sider" hide-trigger>
@@ -13,21 +13,35 @@
           <router-view />
         </Content>
       </Layout>
-      <Footer class="c-page-footer"></Footer>
+      <Footer class="c-page-footer">
+        <foot></foot>
+      </Footer>
     </Layout>
   </div>
 </template>
 <script>
 import TopMenu from '@/base/layout/top-menu.vue'
 import SideMenu from '@/base/layout/side-menu.vue'
+import Foot from '@/base/layout/footer.vue'
 export default {
   name: 'app',
-  components: { TopMenu, SideMenu },
+  components: { TopMenu, SideMenu, Foot },
+  computed: {
+    currentModule () {
+      let current = ''
+      if (this.menu && this.menu.length) current = this.menu.filter(ret => ret.id === this.menuId).pop().name
+      return current
+    }
+  },
   data () {
     return {
+      menu: this.$store.state.menu,
+      menuId: 2,
       a: [],
       b: 0
     }
+  },
+  mounted () {
   }
 }
 </script>
