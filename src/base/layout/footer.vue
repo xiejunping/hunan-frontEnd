@@ -19,7 +19,7 @@
 </template>
 <script>
 export default {
-  name: 'footer'
+  name: 'foot'
 }
 </script>
 <style lang="stylus" scoped>

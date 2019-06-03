@@ -8,8 +8,7 @@
         <Sider class="c-page-sider" hide-trigger>
           <SideMenu :data="a" :current="b"></SideMenu>
         </Sider>
-        <Content>
-
+        <Content ref="main" class="c-page-container">
           <router-view />
         </Content>
       </Layout>
@@ -59,6 +58,8 @@ export default {
     height inherit
   .c-page-sider
     background-color $WrappBgColor
+  .c-page-container
+    position relative
   .c-page-footer
     background-color $footerBgColor
     margin-top $WrappSize
