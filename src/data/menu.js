@@ -1,7 +1,7 @@
 export default [
   {
     'id': 1,
-    'name': 'news',
+    'name': 'index',
     'value': '资讯动态',
     'children': []
   },
