@@ -10,6 +10,13 @@ const router = new Router({
   routes
 })
 
+router.beforeEach((to, from, next) => {
+  const { meta } = to
+  console.log(meta)
+  // store.commit('setNewsName', meta.title)
+  next()
+})
+
 router.afterEach(to => {
   // 路由置顶
   // window.scrollTo(0, 0)

@@ -1,7 +1,10 @@
 <template>
   <Menu class="c-menu" mode="horizontal" theme="light" :active-name="current">
     <div class="c-menu-logo">
-      <a href="/"><img src="~assets/logo.png" alt="" /></a>
+      <a href="/">
+        <img src="~assets/logo.png" alt="" />
+        <span class="h1">技术客栈</span>
+      </a>
     </div>
     <div class="c-menu-nav">
       <div class="c-sub-menu">
@@ -82,12 +85,16 @@ export default {
 .c-menu
   display flex
   flex auto
+  height 63px
   .c-menu-logo
     width 220px
     flex 0 0 220px
     text-align center
     img
       height 44px
+    .h1
+      font-size 22.5px
+      margin-left 12px
   .c-menu-nav
     flex auto
     display flex

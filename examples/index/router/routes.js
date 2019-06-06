@@ -1,5 +1,13 @@
 export default [
   {
+    path: '/',
+    name: 'root',
+    redirect: '/news',
+    meta: {
+      title: ''
+    }
+  },
+  {
     path: '/news',
     name: 'news',
     component: resolve => {
@@ -13,7 +21,7 @@ export default [
     path: '/github',
     name: 'github',
     component: resolve => {
-      require(['@/pages/news/github.vue'], resolve)
+      require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
       title: '开源项目'
@@ -23,7 +31,7 @@ export default [
     path: '/share',
     name: 'share',
     component: resolve => {
-      require(['@/pages/news/share.vue'], resolve)
+      require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
       title: '分享'
@@ -33,7 +41,7 @@ export default [
     path: '/website',
     name: 'website',
     component: resolve => {
-      require(['@/pages/news/website.vue'], resolve)
+      require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
       title: '网站'
@@ -43,7 +51,7 @@ export default [
     path: '/design',
     name: 'design',
     component: resolve => {
-      require(['@/pages/news/design.vue'], resolve)
+      require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
       title: '设计'
@@ -53,7 +61,7 @@ export default [
     path: '/tool',
     name: 'tool',
     component: resolve => {
-      require(['@/pages/news/tool.vue'], resolve)
+      require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
       title: '工具'
