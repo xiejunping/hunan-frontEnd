@@ -91,8 +91,22 @@ dedupe([1, 1, 2, 3]) // [1, 2, 3]
 
 4、AMD, CMD, CommonJS和UMD
 
-5、es6新增数据结构 
+5、es6新增数据结构
 
 6、es5的继承方式与es6的继承
 
 
+# 业务组件封装
+
+* [x] 混合选择组件
+* [x] 投放拖拽选择时间段
+
+
+# 示例
+
+
+[高效的Web开发社区<https://www.jsvue.cn/components.html>](https://www.jsvue.cn/components.html)
+
+![混合选择组件](https://pic4.zhimg.com/50/v2-7f9f2caa4ebfa00fd70281890d5c97b1_r.gif)
+
+![投放拖拽选择时间段](https://pic3.zhimg.com/50/v2-cde99f883be5da4e937b311af87a80ed_r.gif)
