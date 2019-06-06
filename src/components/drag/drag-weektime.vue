@@ -50,7 +50,6 @@
   </div>
 </template>
 <script>
-import { creteArr } from '@/common/js/utils'
 export default {
   name: 'dragWeektime',
   props: {
@@ -143,12 +142,12 @@ export default {
     }
   },
   created () {
-    this.theadArr = creteArr(24)
+    this.theadArr = Array.from(Array(24)).map((ret, id) => id)
   }
 }
 </script>
 <style lang="stylus" scoped>
-@import "~common/styles/mixin"
+@import "~assets/styles/mixin.styl"
 
 .c-weektime
   min-width 640px

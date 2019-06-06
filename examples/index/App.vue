@@ -2,7 +2,7 @@
   <div id="app">
     <Layout>
       <Header class="c-page-header">
-        <TopMenu :data="menu" :current="currentModule" :sign="true"></TopMenu>
+        <TopMenu :data="menu" :current="currentModule" :sign="false"></TopMenu>
       </Header>
       <Layout>
         <Sider class="c-page-sider" hide-trigger>

@@ -1,7 +1,7 @@
 export default [
   {
     path: '/',
-    name: 'root',
+    name: 'index',
     redirect: '/news',
     meta: {
       title: ''

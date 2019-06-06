@@ -2,14 +2,13 @@
   <div id="app">
     <Layout>
       <Header class="c-page-header">
-        <TopMenu :data="menu" :current="currentModule" :sign="true"></TopMenu>
+        <TopMenu :data="menu" :current="currentModule" :sign="false"></TopMenu>
       </Header>
       <Layout>
         <Sider class="c-page-sider" hide-trigger>
-          <SideMenu :data="a" :current="b"></SideMenu>
+          <SideMenu :data="sideMenu" :current="currentMenu"></SideMenu>
         </Sider>
-        <Content>
-
+        <Content class="c-page-container" ref="main">
           <router-view />
         </Content>
       </Layout>
@@ -20,6 +19,7 @@
   </div>
 </template>
 <script>
+import routes from './router/routes'
 import TopMenu from '@/base/layout/top-menu.vue'
 import SideMenu from '@/base/layout/side-menu.vue'
 import Foot from '@/base/layout/footer.vue'
@@ -31,17 +31,29 @@ export default {
       let current = ''
       if (this.menu && this.menu.length) current = this.menu.filter(ret => ret.id === this.menuId).pop().name
       return current
+    },
+    currentMenu () {
+      let menu = ''
+      if (this.sideMenu && this.sideMenu.length) menu = this.sideMenu[this.sideId].name
+      return menu
     }
   },
   data () {
     return {
       menu: this.$store.state.menu,
-      menuId: 2,
-      a: [],
-      b: 0
+      menuId: 1,
+      sideMenu: [],
+      sideId: 1
     }
   },
   mounted () {
+    this.sideMenu = routes.map(ret => {
+      return {
+        name: ret.name,
+        path: ret.path,
+        title: ret.meta.title
+      }
+    })
   }
 }
 </script>
@@ -58,6 +70,9 @@ export default {
     $scroll()
     height inherit
   .c-page-sider
+    background-color $WrappBgColor
+  .c-page-container
+    position relative
     background-color $WrappBgColor
   .c-page-footer
     background-color $footerBgColor

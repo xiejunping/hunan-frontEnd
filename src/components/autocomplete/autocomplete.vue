@@ -103,7 +103,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-@import "~common/styles/mixin"
+@import "~assets/styles/mixin.styl"
 
 .c-autocomplete
   height 28px
