@@ -4,7 +4,9 @@
   "description": "`hunan-frontEnd` 是一个更符合前端实际需要而且更高效的Web开发人员的仓库",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
   },
   "repository": {
     "type": "git",
@@ -23,5 +25,65 @@
   "bugs": {
     "url": "https://github.com/xiejunping/hunan-frontEnd/issues"
   },
-  "homepage": "https://github.com/xiejunping/hunan-frontEnd#readme"
+  "homepage": "https://github.com/xiejunping/hunan-frontEnd#readme",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "babel-polyfill": "^6.26.0",
+    "core-js": "^2.6.5",
+    "iview": "^3.4.2",
+    "vue": "^2.6.10",
+    "vue-color": "^2.7.0",
+    "vue-router": "^3.0.6",
+    "vuedraggable": "^2.21.0",
+    "vuex": "^3.1.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.7.0",
+    "@vue/cli-plugin-eslint": "^3.7.0",
+    "@vue/cli-service": "^3.7.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.2",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "vue-template-compiler": "^2.5.21",
+    "webpack-bundle-analyzer": "^3.3.2"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "@vue/standard"
+    ],
+    "rules": {
+      "no-console": "off",
+      "no-debugger": "off",
+      "generator-star-spacing": "off",
+      "vue/no-parsing-error": [
+        2,
+        {
+          "x-invalid-end-tag": false
+        }
+      ],
+      "camelcase": "off",
+      "object-curly-spacing": "off"
+    },
+    "parserOptions": {
+      "parser": "babel-eslint"
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {}
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
 }
