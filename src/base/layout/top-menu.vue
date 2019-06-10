@@ -1,5 +1,5 @@
 <template>
-  <Menu class="c-menu" mode="horizontal" theme="light" :active-name="current">
+  <Menu class="c-menu" mode="horizontal" theme="light" :active-name="current" @on-select="switchHref">
     <div class="c-menu-logo">
       <a href="/">
         <img src="~assets/logo.png" alt="" />
@@ -16,10 +16,9 @@
             <MenuItem
               v-for="childMenu in menu.children"
               :key="childMenu.id"
-              :name="childMenu.name"
-              :to="`${childMenu.name}.html`">{{childMenu.value}}</MenuItem>
+              :name="childMenu.name">{{childMenu.value}}</MenuItem>
           </Submenu>
-          <MenuItem v-else :name="menu.name" :key="menu.id" :to="`${menu.name}.html`">
+          <MenuItem v-else :name="menu.name" :key="menu.id">
             {{menu.value}}
           </MenuItem>
         </template>
@@ -74,6 +73,9 @@ export default {
   methods: {
     toHref (name) {
       toHref(name)
+    },
+    switchHref (name) {
+      window.location.href = `/${name}.html`
     },
     signOut () {}
   }

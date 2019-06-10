@@ -41,7 +41,7 @@ export default {
   data () {
     return {
       menu: this.$store.state.menu,
-      menuId: 1,
+      menuId: 2,
       sideMenu: [],
       sideId: 1
     }
