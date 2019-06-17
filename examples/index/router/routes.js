@@ -41,7 +41,7 @@ export default [
     path: '/website',
     name: 'website',
     component: resolve => {
-      require(['@/pages/news/news.vue'], resolve)
+      require(['@/pages/news/website.vue'], resolve)
     },
     meta: {
       title: '网站'

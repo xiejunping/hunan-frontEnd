@@ -3,14 +3,14 @@
     <input type="color" />
     <chrome-picker :value="colors"></chrome-picker>
     <draggable v-model="myArray">
-      <transition-group>
+      <transition-group type="transition" name="flip-list">
         <div v-for="element in myArray" :key="element.id">
             {{element.name}}
             <img :src="element.src" width="375" alt="" />
         </div>
       </transition-group>
     </draggable>
-    <IPhone theme="iphoneX" src="https://m.weibo.cn/?jumpfrom=weibocom" />
+    <!-- <IPhone theme="iphoneX" src="https://m.weibo.cn/?jumpfrom=weibocom" /> -->
   </div>
 </template>
 <script>
@@ -49,4 +49,6 @@ export default {
   width 436px
   position relative
   margin 0 auto
+.flip-list-move
+  transition transform 0.5s
 </style>
