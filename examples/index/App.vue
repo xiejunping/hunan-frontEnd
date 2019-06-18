@@ -43,17 +43,19 @@ export default {
       menu: this.$store.state.menu,
       menuId: 1,
       sideMenu: [],
-      sideId: 1
+      sideId: 0
     }
   },
   mounted () {
-    this.sideMenu = routes.map(ret => {
+    const menus = routes.map(ret => {
       return {
         name: ret.name,
         path: ret.path,
-        title: ret.meta.title
+        title: ret.meta.title,
+        show: ret.meta.menu
       }
     })
+    this.sideMenu = menus.filter(ret => ret.show)
   }
 }
 </script>

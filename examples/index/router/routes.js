@@ -14,7 +14,8 @@ export default [
       require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
-      title: '新闻'
+      title: '新闻',
+      menu: true
     }
   },
   {
@@ -24,17 +25,29 @@ export default [
       require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
-      title: '开源项目'
+      title: '开源项目',
+      menu: true
     }
   },
   {
     path: '/share',
     name: 'share',
     component: resolve => {
-      require(['@/pages/news/news.vue'], resolve)
+      require(['@/pages/news/share.vue'], resolve)
     },
     meta: {
-      title: '分享'
+      title: '分享',
+      menu: true
+    }
+  },
+  {
+    path: '/pdf',
+    name: 'pdf',
+    component: resolve => {
+      require(['@/pages/news/pdf.vue'], resolve)
+    },
+    meta: {
+      title: 'pdf'
     }
   },
   {
@@ -44,7 +57,8 @@ export default [
       require(['@/pages/news/website.vue'], resolve)
     },
     meta: {
-      title: '网站'
+      title: '网站',
+      menu: true
     }
   },
   {
@@ -54,7 +68,8 @@ export default [
       require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
-      title: '设计'
+      title: '设计',
+      menu: true
     }
   },
   {
@@ -64,7 +79,8 @@ export default [
       require(['@/pages/news/news.vue'], resolve)
     },
     meta: {
-      title: '工具'
+      title: '工具',
+      menu: true
     }
   }
 ]
