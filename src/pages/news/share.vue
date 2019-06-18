@@ -25,7 +25,7 @@ export default {
   name: 'share',
   methods: {
     to (meta) {
-      window.location.href = meta.url
+      window.location.href = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${meta.url}`
       // this.$router.push({
       //   name: 'pdf',
       //   query: {
@@ -51,6 +51,16 @@ export default {
           id: 3,
           name: '《Liunx入门》',
           url: 'https://pdf-book-1252359508.cos.ap-shanghai.myqcloud.com/pdf/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C%EF%BC%9A%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87%20%EF%BC%88%E7%AC%AC%E5%9B%9B%E7%89%88%EF%BC%89.pdf'
+        },
+        {
+          id: 4,
+          name: '《代码大全》',
+          url: 'https://pdf-book-1252359508.cos.ap-shanghai.myqcloud.com/pdf/%5B%E4%BB%A3%E7%A0%81%E5%A4%A7%E5%85%A82%E4%B8%AD%E6%96%87%E7%89%88(%E5%AE%8C%E6%95%B4%E6%B8%85%E6%99%B0%E7%89%88)%5D.pdf'
+        },
+        {
+          id: 5,
+          name: '《Node.js实战与技巧》',
+          url: 'https://pdf-book-1252359508.cos.ap-shanghai.myqcloud.com/pdf/%E3%80%8ANode.js%E7%A1%AC%E5%AE%9E%E6%88%98%20115%E4%B8%AA%E6%A0%B8%E5%BF%83%E6%8A%80%E5%B7%A7%E3%80%8B.pdf'
         }
       ]
     }
