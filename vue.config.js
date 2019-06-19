@@ -38,6 +38,17 @@ module.exports = {
     })
   },
   chainWebpack: config => {
+    // 拷贝插件
+    config
+      .plugin('copy')
+      .tap(args => {
+        args[0].push({
+          from: path.resolve(__dirname, './static'),
+          to: 'vendor',
+          ignore: ['.*']
+        })
+        return args
+      })
     if (process.env.ANALYZ) {
       config
         .plugin('webpack-bundle-analyzer')
