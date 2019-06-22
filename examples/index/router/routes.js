@@ -2,7 +2,7 @@ export default [
   {
     path: '/',
     name: 'index',
-    redirect: '/news',
+    redirect: '/github',
     meta: {
       title: ''
     }
@@ -15,7 +15,7 @@ export default [
     },
     meta: {
       title: '新闻',
-      menu: true
+      menu: false
     }
   },
   {
@@ -36,8 +36,8 @@ export default [
       require(['@/pages/news/share.vue'], resolve)
     },
     meta: {
-      title: '分享',
-      menu: true
+      title: '分享书本',
+      menu: false
     }
   },
   {

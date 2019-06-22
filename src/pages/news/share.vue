@@ -25,7 +25,7 @@ export default {
   name: 'share',
   methods: {
     to (meta) {
-      window.location.href = `/vendor/web/viewer.html?file=${meta.url}`
+      // window.location.href = `/vendor/web/viewer.html?file=${meta.url}`
       // this.$router.push({
       //   name: 'pdf',
       //   query: {

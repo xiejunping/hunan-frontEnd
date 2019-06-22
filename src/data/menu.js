@@ -2,7 +2,7 @@ export default [
   {
     'id': 1,
     'name': 'index',
-    'value': '资讯动态',
+    'value': '兴趣分享',
     'children': []
   },
   {
@@ -11,16 +11,16 @@ export default [
     'value': '组件创意',
     'children': []
   },
-  {
-    'id': 3,
-    'name': 'blog',
-    'value': '博文精选',
-    'children': []
-  },
+  // {
+  //   'id': 3,
+  //   'name': 'blog',
+  //   'value': '博文精选',
+  //   'children': []
+  // },
   {
     'id': 4,
     'name': 'github',
-    'value': '开源推广',
+    'value': '开源项目',
     'children': [
       {
         'id': 5,

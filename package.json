@@ -31,10 +31,12 @@
     "babel-polyfill": "^6.26.0",
     "core-js": "^2.6.5",
     "iview": "^3.4.2",
+    "marked": "^0.6.2",
     "vue": "^2.6.10",
     "vue-color": "^2.7.0",
     "vue-pdf": "^4.0.7",
     "vue-router": "^3.0.6",
+    "vue-scroll": "^2.1.12",
     "vuedraggable": "^2.21.0",
     "vuex": "^3.1.1"
   },

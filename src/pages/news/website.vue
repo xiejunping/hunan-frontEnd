@@ -25,20 +25,22 @@ export default {
         {
           id: 1,
           name: '第一图',
-          src: 'http://fc-feed.cdn.bcebos.com/0/pic/f8521e0b9b5cd85b70a375aeff7357e6.jpg'
+          src: 'http://fc-feed.cdn.bcebos.com/0/pic/f8521e0b9b5cd85b70a375aeff7357e61.jpg'
         },
         {
           id: 2,
           name: '第二图',
-          src: 'http://fc-feed.cdn.bcebos.com/0/pic/255dc5900f1373ac61475f76d7c3a45a.jpg'
+          src: 'http://fc-feed.cdn.bcebos.com/0/pic/255dc5900f1373ac61475f76d7c3a45a1.jpg'
         },
         {
           id: 3,
           name: '第三图',
-          src: 'http://fc-feed.cdn.bcebos.com/0/pic/5e42575bb73411d38f12caab8bea51fa.jpg'
+          src: 'http://fc-feed.cdn.bcebos.com/0/pic/5e42575bb73411d38f12caab8bea51fa1.jpg'
         }
       ]
     }
+  },
+  mounted () {
   }
 }
 </script>

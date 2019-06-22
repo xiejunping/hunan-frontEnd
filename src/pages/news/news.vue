@@ -3,7 +3,7 @@
     <!-- 导航 -->
     <Breadcrumb style="margin-bottom: 12px">
       <BreadcrumbItem :to="{path: '/'}">
-        <Icon type="ios-home-outline"></Icon> 资讯动态
+        <Icon type="ios-home-outline"></Icon> 兴趣爱好
       </BreadcrumbItem>
       <BreadcrumbItem>
         <Icon type="logo-buffer"></Icon> {{$route.meta.title}}
@@ -16,12 +16,12 @@
           <ul class="c-entry-list">
             <li class="c-entry-item">
               <div class="c-entry-content">
-                <a href="https://www.infoq.cn/article/P76Ke6SDw7cXsGL-Q8fU" target="_blank">
+                <a href="#" target="_blank">
                   <Row>
                     <Col span="18">
                       <div class="content-box">
-                        <h2>被迫遵守法规？AMD停止向中国提供x86新技术授权</h2>
-                        <p>从 Catalina 起，macOS 上默认的 shell 将从 bash 变成 zsh</p>
+                        <h2>前端工程化（5）：你所需要的npm知识储备都在这了</h2>
+                        <p>在前端开发流程中提供了非常完善的自动化工具链</p>
                         <p>
                           <span></span>
                           <span></span>
@@ -36,12 +36,12 @@
             </li>
             <li class="c-entry-item">
               <div class="c-entry-content">
-                <a href="https://www.infoq.cn/article/P76Ke6SDw7cXsGL-Q8fU" target="_blank">
+                <a href="#" target="_blank">
                   <Row>
                     <Col span="18">
                       <div class="content-box">
-                        <h2>被迫遵守法规？AMD停止向中国提供x86新技术授权</h2>
-                        <p>从 Catalina 起，macOS 上默认的 shell 将从 bash 变成 zsh</p>
+                        <h2>前端架构师亲述：前端工程师成长之路的 N 问 及 回答</h2>
+                        <p>better-scroll 作者 黄佚</p>
                         <p>
                           <span></span>
                           <span></span>
@@ -74,14 +74,34 @@
       </Col>
     </Row>
 
+    <Row>
+      <Col span="24" style="height: 600px">
+        <editor-md
+          :mdValuesP="msg"
+          :fullPageStatusP="false"
+          :editStatusP="false"
+          :previewStatusP="false"
+          :navStatusP="true"
+          @childevent="childEventHandler">
+        </editor-md>
+      </Col>
+    </Row>
+
   </div>
 </template>
 <script>
+import EditorMd from '@/components/editor/editor-md.vue'
 export default {
   name: 'news',
+  components: { EditorMd },
+  methods: {
+    childEventHandler (data) {
+      console.log(data)
+    }
+  },
   data () {
     return {
-
+      msg: '# Vue技术栈'
     }
   },
   mounted () {
