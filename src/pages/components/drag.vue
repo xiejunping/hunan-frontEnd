@@ -1,5 +1,8 @@
 <template>
   <div class="c-component">
+    <div class="m-compont">
+      <h1>如何实现一个这样的时段选择组件</h1>
+    </div>
     <Row class="row-item" :gutter="12">
       <Col span="3" class="col-item">
         <span class="item-field">推广时段</span>
@@ -141,7 +144,9 @@ export default {
 
 .c-component
   padding 15px 20px
-
+  .m-compont
+    line-height 45px
+    padding 40px 15px
 /* 表单选项 */
 .row-item
   display flex

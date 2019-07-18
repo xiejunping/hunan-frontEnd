@@ -6,7 +6,7 @@
     </div>
     <div v-for="item in data" :key="item.id">
       <div v-if="item.children && item.children.length" :class="itemClasses(item)" @click="$emit('on-child', {item, level})">
-        <Checkbox v-model="item.check" style="margin: 0"></Checkbox>
+        <Checkbox v-model="item.check" :indeterminate="itemIndeterminate(item)"></Checkbox>
         <span>{{item.value}}</span>
         <Icon type="ios-arrow-forward" class="c-check-arrow" size="14" color="#c1c1c1" />
         <span class="c-item-checkbox c-cataract" @click="selectItem(item)"></span>
@@ -16,7 +16,18 @@
   </div>
 </template>
 <script>
-import { computeChild } from '@/common/js/utils'
+
+const computeChild = (list, Vue) => {
+  list.forEach(item => {
+    if (item.children && item.children.length) {
+      const child = item.children
+      if (child.every(ret => ret.check)) Vue.$set(item, 'check', true)
+      else Vue.$set(item, 'check', false)
+      computeChild(child, Vue)
+    }
+  })
+}
+
 export default {
   name: 'selectBox',
   props: {
@@ -56,6 +67,19 @@ export default {
         level: this.level,
         cat: item.value
       })
+    },
+    itemIndeterminate (child) {
+      const hasChild = (meta) => {
+        return meta.children.reduce((sum, item) => {
+          let foundChilds = []
+          if (item.check) sum.push(item)
+          if (item.children) foundChilds = hasChild(item)
+          return sum.concat(foundChilds)
+        }, [])
+      }
+      const some = hasChild(child).length > 0
+      const every = child.children && child.children.every(ret => ret.check)
+      return some && !every
     }
   },
   watch: {
@@ -65,11 +89,14 @@ export default {
       },
       deep: true
     }
+  },
+  mounted () {
+    computeChild(this.data, this)
   }
 }
 </script>
 <style lang="stylus" scoped>
-@import "~common/styles/mixin"
+@import "~assets/styles/mixin.styl"
 
 .c-cataract
   display block
@@ -109,4 +136,8 @@ export default {
   .c-item-checkbox
     width 36px
     height 36px
+.c-select-box >>>.ivu-checkbox-indeterminate
+  .ivu-checkbox-inner
+    background-color #6fb3fb
+    border-color #6fb3fb
 </style>

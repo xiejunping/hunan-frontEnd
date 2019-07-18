@@ -126,7 +126,7 @@ export default {
 }
 </script>
 <style lang="stylus" scoped>
-@import "~common/styles/mixin"
+@import "~assets/styles/mixin.styl"
 
 .c-pop-tip
   width 100%
@@ -137,4 +137,10 @@ export default {
   display block
   font-size 14px
   height 28px
+  >>>span.ivu-tag-text
+    $no-wrap()
+    width calc(100% - 22px)
+    display inline-block
+  >>>.ivu-icon-ios-close
+    top -8px
 </style>

@@ -22,7 +22,7 @@ export default [
     path: '/github',
     name: 'github',
     component: resolve => {
-      require(['@/pages/news/news.vue'], resolve)
+      require(['@/pages/news/github.vue'], resolve)
     },
     meta: {
       title: '开源项目',

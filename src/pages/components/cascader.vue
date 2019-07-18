@@ -1,10 +1,13 @@
 <template>
-  <div class="c-github">
+  <div class="c-cascader">
+    <div class="m-compont">
+      <h1>如何实现一个这样的级联组件</h1>
+    </div>
     <Row class="row-item" :gutter="12">
       <Col span="3" class="col-item">
         <span class="item-field">选择地区</span>
       </Col>
-      <Col span="18">
+      <Col span="19">
         <selecter
           v-model="mult_city"
           :data="regionData"
@@ -14,6 +17,7 @@
           @on-clear="clearTag" />
       </Col>
     </Row>
+
   </div>
 </template>
 <script>
@@ -53,11 +57,17 @@ const findCheck = (list, arr = []) => {
 }
 
 export default {
-  name: 'github',
+  name: 'cascader',
   components: { Selecter },
   computed: {
     mult_city () {
       return findCheck(this.regionData)
+    }
+  },
+  data () {
+    return {
+      regionData: Region,
+      regions: []
     }
   },
   methods: {
@@ -67,7 +77,7 @@ export default {
       // 无限递归
       const setAllChecked = (data, check, Vue) => {
         data.forEach(ret => {
-          if (ret.children && ret.children.length) setAllChecked(ret.children, check)
+          if (ret.children && ret.children.length) setAllChecked(ret.children, check, Vue)
           Vue.$set(ret, 'check', check)
         })
       }
@@ -101,20 +111,17 @@ export default {
       }
       clearTagOfData(list, this)
     }
-  },
-  data () {
-    return {
-      regionData: Region,
-      regions: []
-    }
   }
 }
 </script>
 <style lang="stylus" scoped>
 @import "~assets/styles/mixin.styl"
 
-.c-github
-  padding 15px 0
+.c-cascader
+  padding 15px 20px
+  .m-compont
+    line-height 45px
+    padding 40px 15px
 /* 表单选项 */
 .row-item
   display flex

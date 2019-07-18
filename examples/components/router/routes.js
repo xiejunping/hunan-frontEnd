@@ -16,5 +16,15 @@ export default [
     meta: {
       title: '投放时间段'
     }
+  },
+  {
+    path: '/cascader',
+    name: 'cascader',
+    component: resolve => {
+      require(['@/pages/components/cascader.vue'], resolve)
+    },
+    meta: {
+      title: '级联组件'
+    }
   }
 ]
