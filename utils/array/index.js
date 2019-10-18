@@ -1,5 +1,5 @@
 define(function (require) {
-  'use strict';
+  'use strict'
 
   let utils = {
     /**
@@ -10,7 +10,7 @@ define(function (require) {
     isArray: function (arr) {
       if (!Array.isArray) {
         Array.isArray = arg => {
-          return Object.prototype.toString.call(arr) === "[object Array]"
+          return Object.prototype.toString.call(arr) === '[object Array]'
         }
       }
       return Array.isArray(arr)
@@ -23,27 +23,27 @@ define(function (require) {
      * @returns {number} 位置
      */
     findIndex: function (id, feild, arr) {
-      let index = -1;
-      let tem = [];
+      let index = -1
+      let tem = []
       if (id && feild && arr && arr.length) {
         arr.forEach(function (t, i) {
-          tem.push(t[feild]);
-        });
-        index = tem.indexOf(id);
+          tem.push(t[feild])
+        })
+        index = tem.indexOf(id)
       }
-      return index;
+      return index
     },
     /**
      * 数组随机乱序
      * @param {Array} arr 要乱序的数组
      * @returns {Array} arr 乱序的数组
      */
-    randomArr: function(arr) {
-      if (!Array.isArray(arr)) return null;
-      arr.sort(function() {
-        return (0.5 - Math.random());
-      });
-      return arr;
+    randomArr: function (arr) {
+      if (!Array.isArray(arr)) return null
+      arr.sort(function () {
+        return (0.5 - Math.random())
+      })
+      return arr
     },
     /**
      * 数组随机抽多个 - 非重复
@@ -52,13 +52,13 @@ define(function (require) {
      * @returns {*}
      */
     randomLen: function (arr, len) {
-      if (!Array.isArray(arr)) return null;
-      if (arr.length < len) return null;
-      const arrTmp = [];
+      if (!Array.isArray(arr)) return null
+      if (arr.length < len) return null
+      const arrTmp = []
       for (let i = 0; i < len; i++) {
         arr.push(utils.randomArr(arr).pop())
       }
-      return arrTmp;
+      return arrTmp
     },
     /**
      * 数组合并去重
@@ -66,15 +66,22 @@ define(function (require) {
      * @param {array} add
      */
     mergeArray: function (list, add) {
-      if (!isArray(add)) return list
+      if (!Array.isArray(add)) return list
 
       add.forEach(ret => {
         const index = list.findIndex(meta => meta.id === ret.id || meta.name === ret.name)
         if (index < 0) list.push(ret)
       })
       return list
+    },
+    /**
+     * 生成自然数 数组
+     * @param {number} len 长度
+     */
+    newIndexArray: function (len) {
+      return Array.from(Array(len)).map((ret, id) => id)
     }
-  };
+  }
 
-  return utils;
-});
+  return utils
+})
