@@ -22,9 +22,9 @@ module.exports = {
   pages: buildEnteries(glob.sync(`./${PAGE_PATH}/*/*.js`), PAGE_PATH),
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
-      config.mode = 'production';
+      config.mode = 'production'
     } else {
-      config.mode = 'development';
+      config.mode = 'development'
     }
     Object.assign(config, {
       resolve: {
